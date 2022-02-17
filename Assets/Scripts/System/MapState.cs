@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/**
+ * Deprecated
+ * this will be replaced with more versatile utillity classes currently beeing made
+ */
 public class MapState : MonoBehaviour
 {
     [Header("Audio")]

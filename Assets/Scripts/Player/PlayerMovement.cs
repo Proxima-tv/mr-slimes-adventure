@@ -41,10 +41,9 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         // catch input and jump when grounded
-        float x = Input.GetAxis("Horizontal");
         if (Input.GetButtonDown("Jump") && isGrounded || Input.GetButtonDown("Jump") && isRedundandGrounded) {
             // Play Jump Sounds
-            Jump.Play(0);
+            // Jump.Play(0);
 
             if (JumpBoost) {
                 rb.AddForce(Vector2.up * (JumpForce + 20), ForceMode2D.Impulse);
@@ -86,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
      */
     private void OnCollisionStay2D(Collision2D collision)
     {
-        Debug.Log(collision.gameObject.tag == "Ground");
+        // Debug.Log(collision.gameObject.tag == "Ground");
         if (collision.gameObject.layer == ground)
         {
             isGrounded = true;

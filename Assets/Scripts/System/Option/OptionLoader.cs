@@ -56,11 +56,11 @@ public class OptionLoader: MonoBehaviour
         QualitySettings.vSyncCount = VSYNC;
 
         Cursor.lockState = CursorLockMode.None;
-        /*switch (CursorLockmode)
+        switch (CursorLockmodeValue)
         {
             case 0: Cursor.lockState = CursorLockMode.Locked; break;
             case 1: Cursor.lockState = CursorLockMode.Confined; break;
             case 2: Cursor.lockState = CursorLockMode.None; break;
-        }*/
+        }
     }
 }
