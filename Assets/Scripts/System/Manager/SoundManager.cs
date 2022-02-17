@@ -6,6 +6,8 @@ public class SoundManager : MonoBehaviour
 {
 
     private static Dictionary<string, AudioClip> clips = new Dictionary<string, AudioClip>();
+    public GameObject Player;
+    public GameObject Camera;
 
     public void addClips(string ID, string clipLoc)
     {
@@ -22,5 +24,23 @@ public class SoundManager : MonoBehaviour
     public AudioClip getClip(string ID)
     {
         return clips[ID];
+    }
+
+    public void playInMap(string ID, ulong delay)
+    {
+        Debug.Log($"Playing Sound: {ID} delayed by {delay}ms");
+        AudioSource audioSource = Camera.GetComponent<AudioSource>();
+        audioSource.clip = getClip(ID);
+        audioSource.Play(delay);
+        Debug.Log($"Played Sound: {ID}");
+    }
+
+    public void playOnPlayer(string ID, ulong delay)
+    {
+        Debug.Log($"Playing Sound: {ID} delayed by {delay}ms");
+        AudioSource audioSource = Player.GetComponent<AudioSource>();
+        audioSource.clip = getClip(ID);
+        audioSource.Play(delay);
+        Debug.Log($"Played Sound: {ID}");
     }
 }

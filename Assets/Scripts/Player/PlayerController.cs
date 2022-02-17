@@ -46,7 +46,6 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void OnCollisionEnter2D(Collision2D col) {
-        Debug.Log(col.collider.tag);
 
         if(col.collider.tag == "enemyBody") {
             // Debug.Log("Enemy Attack");
