@@ -15,8 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public bool JumpBoost = false;
     public int jumps = 0;
 
-    [Header("Audio")]
-    public AudioSource Jump;
+    public SoundManager soundManager;
 
     [Header("Physics")]
     Rigidbody2D rb;
@@ -43,8 +42,7 @@ public class PlayerMovement : MonoBehaviour
         // catch input and jump when grounded
         if (Input.GetButtonDown("Jump") && isGrounded || Input.GetButtonDown("Jump") && isRedundandGrounded) {
             // Play Jump Sounds
-            // Jump.Play(0);
-
+            soundManager.playOnPlayer("Jump", 0);
             if (JumpBoost) {
                 rb.AddForce(Vector2.up * (JumpForce + 20), ForceMode2D.Impulse);
 

@@ -5,22 +5,42 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
 
-    private Dictionary<string, AudioClip> clips;
+    private static Dictionary<string, AudioClip> clips = new Dictionary<string, AudioClip>();
+    public GameObject Player;
+    public GameObject Camera;
 
-    // Start is called before the first frame update
-    void Start()
+    public void addClips(string ID, string clipLoc)
     {
-        clips = new Dictionary<string, AudioClip>();
+        try
+        {
+            Debug.Log($"Loading Clip {clipLoc} assigned to ID: {ID}");
+            AudioClip clip = Resources.Load<AudioClip>(clipLoc);
+            clips.Add(ID, clip);
+        } catch(System.Exception ex) { 
+            Debug.Log(ex.ToString());
+        }
     }
 
-    public void addClips(string title, AudioClip clip)
+    public AudioClip getClip(string ID)
     {
-        Debug.Log("Loading Audio Clip: " + title);
-        clips.Add(title, clip);
+        return clips[ID];
     }
 
-    public AudioClip getClip(string title)
+    public void playInMap(string ID, ulong delay)
     {
-        return clips[title];
+        Debug.Log($"Playing Sound: {ID} delayed by {delay}ms");
+        AudioSource audioSource = Camera.GetComponent<AudioSource>();
+        audioSource.clip = getClip(ID);
+        audioSource.Play(delay);
+        Debug.Log($"Played Sound: {ID}");
+    }
+
+    public void playOnPlayer(string ID, ulong delay)
+    {
+        Debug.Log($"Playing Sound: {ID} delayed by {delay}ms");
+        AudioSource audioSource = Player.GetComponent<AudioSource>();
+        audioSource.clip = getClip(ID);
+        audioSource.Play(delay);
+        Debug.Log($"Played Sound: {ID}");
     }
 }
