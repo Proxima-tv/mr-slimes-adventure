@@ -5,22 +5,22 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
 
-    private Dictionary<string, AudioClip> clips;
+    private static Dictionary<string, AudioClip> clips = new Dictionary<string, AudioClip>();
 
-    // Start is called before the first frame update
-    void Start()
+    public void addClips(string ID, string clipLoc)
     {
-        clips = new Dictionary<string, AudioClip>();
+        try
+        {
+            Debug.Log($"Loading Clip {clipLoc} assigned to ID: {ID}");
+            AudioClip clip = Resources.Load<AudioClip>(clipLoc);
+            clips.Add(ID, clip);
+        } catch(System.Exception ex) { 
+            Debug.Log(ex.ToString());
+        }
     }
 
-    public void addClips(string title, AudioClip clip)
+    public AudioClip getClip(string ID)
     {
-        Debug.Log("Loading Audio Clip: " + title);
-        clips.Add(title, clip);
-    }
-
-    public AudioClip getClip(string title)
-    {
-        return clips[title];
+        return clips[ID];
     }
 }

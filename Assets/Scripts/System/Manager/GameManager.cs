@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
         stateManager.addState("paused");
         stateManager.addState("boss");
         Debug.Log("Loading Audio Assets");
+        soundManager.addClips("test", "Audio/Music/adhesivewombat");
+        Debug.Log(soundManager.getClip("test"));
     }
 
     public void setMapState()
