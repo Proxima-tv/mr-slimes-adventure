@@ -507,6 +507,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Life Up
       objectReference: {fileID: 0}
+    - target: {fileID: 7123016107045577209, guid: ebf5c8b558b7ddb4abab1dce2414bcac, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7123016107045577210, guid: ebf5c8b558b7ddb4abab1dce2414bcac, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1828,6 +1832,10 @@ PrefabInstance:
     - target: {fileID: 7571163651331908178, guid: e995c6d366a71d64abbefb199131f770, type: 3}
       propertyPath: m_Name
       value: JumpBoost
+      objectReference: {fileID: 0}
+    - target: {fileID: 7571163651331908178, guid: e995c6d366a71d64abbefb199131f770, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7571163651331908178, guid: e995c6d366a71d64abbefb199131f770, type: 3}
       propertyPath: m_TagString
@@ -5147,11 +5155,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5700637145301869386, guid: 9aab7f9061f200247a9db4996c8a9e1a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -33.984
+      value: -33.96
       objectReference: {fileID: 0}
     - target: {fileID: 5700637145301869386, guid: 9aab7f9061f200247a9db4996c8a9e1a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.271507
+      value: -1.97
       objectReference: {fileID: 0}
     - target: {fileID: 5700637145301869386, guid: 9aab7f9061f200247a9db4996c8a9e1a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5736,7 +5744,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8570621231301109850, guid: 12b7310eef211204a838928e3d020288, type: 3}
       propertyPath: JumpForce
-      value: 2
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8570621231301109850, guid: 12b7310eef211204a838928e3d020288, type: 3}
       propertyPath: soundManager

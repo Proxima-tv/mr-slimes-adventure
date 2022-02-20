@@ -9,11 +9,11 @@ public class PlayerMovement : MonoBehaviour
     public float JumpForce = 5f;
 
     [Header("Grounded Checks")]
-    public Transform groundCheck;
-    public bool isGrounded = true;
-    public LayerMask ground;
-    public bool JumpBoost = false;
-    public int jumps = 0;
+    [SerializeField] Transform groundCheck;
+    [SerializeField] bool isGrounded = true;
+    [SerializeField] LayerMask ground;
+    [SerializeField] internal bool JumpBoost = false;
+    [SerializeField] int jumps = 0;
 
     public SoundManager soundManager;
 
@@ -39,10 +39,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void Update()
+    void FixedUpdate()
     {
+        // Fixes bug which would endup in locking the player down to the ground
+        isRedundandGrounded = Physics2D.OverlapPoint(groundCheck.position, ground);
+
         // catch input and jump when grounded
-        if (inputMapper.Jump && isGrounded || inputMapper.Jump && isRedundandGrounded) {
+        if (inputMapper.Jump && isGrounded || inputMapper.Jump && isRedundandGrounded)
+        {
             // Play Jump Sounds
             soundManager.playOnPlayer("Jump", 0);
             if (JumpBoost) {
@@ -58,14 +62,6 @@ public class PlayerMovement : MonoBehaviour
             }
             isGrounded = false;
         }
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        // this is just here in order to prevent jump lockdowns means player can stop jumping out of nowhere
-        // basicly this line is here to do redundand jump checks
-        isRedundandGrounded = Physics2D.OverlapPoint(groundCheck.position, ground);
 
         // Catches Input and applies input based on integer value from (-1 to 1) * Jumpforce
         Vector3 move = new Vector3(inputMapper.Horizontal * speed, rb.velocity.y, 0f);

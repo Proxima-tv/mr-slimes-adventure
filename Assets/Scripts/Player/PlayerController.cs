@@ -17,17 +17,16 @@ public class PlayerController : MonoBehaviour {
 
     //M�nzenanzeige 
     [Header ("Stats")]
-    public int Coins = 0;
-    public int Ammo = 0;
-    public int[] CompleteLevel;
-    public Object[] Inventar;
+    internal int Coins = 0;
+    internal int[] CompleteLevel;
+    internal Object[] Inventar;
 
     //lebensanzeige
     [Header("Player Health & Respawn")]
-    public int life = 3;
-    public float x = -34.2f;
-    public float y = -2.4f;
-        
+    internal int life = 3;
+    float x = 2;
+    float y = 2;
+
     [Header("UI")]
     public Text lifetxt;
     public Text coins;

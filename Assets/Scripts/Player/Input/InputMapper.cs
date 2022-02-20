@@ -24,7 +24,7 @@ public class InputMapper : MonoBehaviour
     // input listeners do not touch
     #region Input Methods
         public void OnHorizontal(InputAction.CallbackContext context) { Horizontal = context.ReadValue<float>(); }
-        public void OnJump(InputAction.CallbackContext context) { setJump(context.performed); }
+        public void OnJump(InputAction.CallbackContext context) { Jump = context.ReadValue<float>() > 0.1f;  }
     #endregion
 
 }

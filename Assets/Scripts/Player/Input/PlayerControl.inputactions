@@ -92,24 +92,107 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "4d136499-0c8e-4f34-bc6b-d68721e63ccf",
+                    "name": "Keyboard",
+                    "id": "73d451d3-e7f9-40b0-8bca-2552e415d6cc",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "adae35c9-9ef5-4f2b-891d-f1d0dbe1a010",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "886afb32-f30f-4bc4-a847-e8a73a7a4a3b",
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
                     "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "GamePad",
+                    "id": "8b20cde5-ddd5-4b36-b782-5f1c438e1012",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "3b6e3995-7e75-40ad-8341-c84c77812884",
+                    "name": "negative",
+                    "id": "5ce40280-d69e-46d2-b005-1152e7d7d83e",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "64144182-8eb4-4746-bc7f-4bf93f5df5b1",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        },
+        {
+            "name": "Misc",
+            "id": "66c12fb6-dedb-46db-9393-b4aea6711a25",
+            "actions": [
+                {
+                    "name": "Menu",
+                    "type": "PassThrough",
+                    "id": "e3edcf37-e02b-412a-b473-7b4eaf99bcc8",
+                    "expectedControlType": "Digital",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "92f5ecc0-1861-48e1-81e4-8eec28c73f81",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "79645b71-1180-4d91-b90c-673d8d236b2c",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
