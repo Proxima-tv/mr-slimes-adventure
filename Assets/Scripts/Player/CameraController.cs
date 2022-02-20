@@ -26,7 +26,7 @@ public class CameraController : MonoBehaviour
                 transform.SetPositionAndRotation(new Vector3(player.transform.position.x, lowestPoint, transform.position.z), transform.rotation);
             }
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
+        /*if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (pauseObject.activeSelf)
             {
@@ -38,6 +38,6 @@ public class CameraController : MonoBehaviour
                 pauseObject.SetActive(true);
                 Time.timeScale = 0;
             }
-        }
+        }*/
     }
 }

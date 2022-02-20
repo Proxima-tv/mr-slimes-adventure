@@ -21,10 +21,12 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     BoxCollider2D box;
     private bool isRedundandGrounded;
+    private InputMapper inputMapper;
 
     // Start is called before the first frame update
     void Start()
     {
+        inputMapper = GetComponent<InputMapper>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -40,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         // catch input and jump when grounded
-        if (Input.GetButtonDown("Jump") && isGrounded || Input.GetButtonDown("Jump") && isRedundandGrounded) {
+        if (inputMapper.Jump && isGrounded || inputMapper.Jump && isRedundandGrounded) {
             // Play Jump Sounds
             soundManager.playOnPlayer("Jump", 0);
             if (JumpBoost) {
@@ -66,8 +68,7 @@ public class PlayerMovement : MonoBehaviour
         isRedundandGrounded = Physics2D.OverlapPoint(groundCheck.position, ground);
 
         // Catches Input and applies input based on integer value from (-1 to 1) * Jumpforce
-        float x = Input.GetAxis("Horizontal");
-        Vector3 move = new Vector3(x * speed, rb.velocity.y, 0f);
+        Vector3 move = new Vector3(inputMapper.Horizontal * speed, rb.velocity.y, 0f);
         rb.velocity = move;
     }
 
