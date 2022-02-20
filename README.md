@@ -1,5 +1,4 @@
 ## 2D Plattformer konzept in Stichpunkten:
-### Erster möglicher ALPHA Release: 27.06.2021 (Nicht entgültig)
 
 powerups, Gegner, springen, 3 Level, Sprung platten, Side Scrolling, puzzle, responsiv Map design, end Gegner
 
